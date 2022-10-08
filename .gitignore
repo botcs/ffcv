@@ -9,6 +9,12 @@ __pycache__/
 # C extensions
 *.so
 
+# Project specific
+*.json
+*.pth
+*.yaml
+wandb
+
 # Distribution / packaging
 .Python
 build/
