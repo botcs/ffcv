@@ -230,6 +230,7 @@ if __name__ == "__main__":
     tags = train_ids.split("_")
     epochs = config.get().training.epochs
     lr = config.get().training.lr
+    pe = config.get().training.lr_peak_epoch
     wandb.init(
         project="active_cifar10k",
         entity="csbotos",
@@ -238,7 +239,7 @@ if __name__ == "__main__":
             "training": vars(config.get().training),
         },
         tags=tags,
-        name=f"{train_ids}+LR{lr}+E{epochs}"
+        name=f"{train_ids}+LR{lr:1.2f}+E{epochs}+PE{pe}"
     )
 
     loaders, start_time = make_dataloaders()
